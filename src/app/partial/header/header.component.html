@@ -1,0 +1,255 @@
+<header class="header-container">  
+    <div class="search-panel search-card-postion">
+       <div class="logo logo-postion">
+       <img src="../assets/images/icon/logo.svg" alt="Innsight"  title="Innsight"/></div>
+       <div class="admin-column">
+          <div class="top-search-box">        
+             <div class="search-col">
+               <div class="col-sm-10 p0">
+                    <input type="text" id="txtTwSrch" class="search-input-box"/>
+                 <span id="searchTweet" class="sprite search-icon"></span>
+               </div>
+                     <div class="col-sm-2 main-search-selectbox">
+                        <select id="globalTextSearchTypeId">
+                        <option value="bool">Boolean</option>
+                        <option value="fuzzy">Fuzzy</option>
+                        <option value="proxy">Proxy</option>
+                        </select>
+                  </div>
+             </div>
+         
+             <div class="link-analysis">
+                    <ul>
+                       <li><a href="javascript:">Advance Filter <span class="advnceSrchCountcl"  id="advnceSrchCount"> - </span></a></li>
+                       
+                       <li><a href="javascript:void(0)">Past Analysis</a>
+                           <span class="triangle-down"></span>
+                       </li>
+                       
+                       <li> <a href="javascript:void(0)">New Analysis</a></li>
+                       <li> <a href="javascript:void(0)"><b id="spnCaseMain" data-attr="" data-attrenid=""></b></a></li>
+                       
+                       <li class="dropdown open dropdownsentiment" style="display:none">
+                          <a class="dropdown">
+                             <div data-toggle="dropdown">
+                                    <span id="spntwsnapshot" data-attrtw="">Snapshots</span>
+                                    <span class="triangle-down"></span>
+                             </div>
+                             <div class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                    <ul id="ultwsnapshotfil"></ul>
+                             </div>
+                          </a>
+                       </li>
+                       
+                       <li class="dropdown open dropdownsentiment" style="display: none">
+                          <a class="dropdown">
+                             <div data-toggle="dropdown"> 
+                                    <span id="spanTwSrt" data-attrtw="ne">Publish Newest</span> 
+                                    <span class="triangle-down"></span> 
+                             </div>
+                             <div class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                <ul id="ultwsrt"> </ul>
+                             </div>
+                          </a>
+                       </li>
+                    </ul>
+                 <ul id="ultwsnapshotLinkRptId" class="link-analysis-ul"> </ul>
+            </div>
+          </div>         
+       </div>
+ </div>
+ 
+ 
+    
+    <div class="header-right">
+       <ul class="pull-right">       
+       <li style="display:none" class="auto-refreshed-col">
+     <label>
+     <span class="status-ok">Auto Refresh</span>
+     </label>
+     <select id="ddlAutoRefresh" >
+     <option value="0">Do not refresh</option>
+     <option value="900000">Refresh every 15 minutes</option>
+     <option value="1800000">Refresh every 30 minutes</option>
+     </select>
+     </li>
+ 
+     <div class="clear"></div>
+         <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Home" aria-hidden="true" id="divAnalysisId">
+             <div class="sprite analysis-icon"></div>
+             <strong>Home</strong> 
+         </li>
+          
+         <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" 
+                 data-original-title="profiler analysis" aria-hidden="true" id="profilerAnalysisDivId">
+             <div class="sprite report-icon"></div>
+             <strong>Analysis</strong> 
+          </li> 
+ 
+           <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" 
+                 data-original-title="" aria-hidden="true" id="zReportDivId">
+             <div class="sprite report-icon"></div>
+             <strong>Report</strong> 
+          </li>
+          
+         <li id="utilityMainVisibilityId" class="dropdown dropdownsentiment" aria-hidden="true">
+              <a class="dropdown">
+                   <div data-toggle="dropdown" aria-expanded="true">
+                        <div class="sprite image-finder-icon"></div>
+                      <strong>utility</strong>
+                        <span class="triangle-down"></span>
+                   </div>
+
+                   <div class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                     <ul class="m0">
+                           <li id="utilityTrendsLiId"><span class="allprofile" onClick="openTrendsViewDetails()">Trends</span></li>
+                           <li id="utilityEnrollmentImageLiId"><span class="allprofile" onClick="openenrollmentImagViewDetails()">Enrollment Image</span></li>
+                           <li id="utilityImageSearchLiId"><span class="allprofile" onClick="openImageSearchViewDetails()">Image Search</span></li>
+                           <li id="utilityODSSearchLiId"><span class="allprofile" onClick="openODSViewDetails()">ODS Search</span></li>
+                           <li style="display:none;" id="utilityGoogleNewsLiId"><span class="allprofile" onClick="openGoogleNewsViewDetails()">Google News</span></li>
+                           <li id="utilityArchivesLiId"><span class="allprofile" onclick="openwayBackiframeDetails()">Archives</span></li>
+                                                 
+                           <li style="display:none;">
+                               <span class="allprofile">
+                               <strong onClick="openProfileFinderDetails()">Profile Search</strong>
+                              <strong class="pfcolor" id="profileFinderId" data-attr='0' onClick="openProfileFinderAlertDetails()">0</strong>
+                              </span>
+                          </li>
+                          
+                           <li style="display:none;"><span class="allprofile" onClick="openProfileFinderIframeview()">Profile Search New</span></li>
+                           <li style="display:none;"><span class="allprofile" onClick="openImageODSDetails()">Image ODS</span></li>
+                           <li style="display:none;"><span class="allprofile" onClick="openImageOCRDetails()">Image OCR</span></li>
+                           <li style="display:none;"> <span class="allprofile" onClick="openfakeProfileFinderDetails()">Fake Profile Finder</span></li>
+                     </ul>
+                   </div>
+               </a>
+          </li>
+          
+          
+          <li style="display:none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Person" aria-hidden="true" onClick="openPersonViewDetails()" id="idPerson">
+             <div class="sprite person-icon"></div>
+             <strong>Person</strong> 
+          </li>
+          
+          <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Place" aria-hidden="true" id="idPlace">
+             <div class="sprite place-icon"></div>
+             <strong>Place</strong> 
+          </li>
+          
+          <li style="display:none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Organization" aria-hidden="true" onClick="openOrganizationViewDetails()" id="idOrganization">
+             <div class="sprite org-icon"></div>
+             <strong>Org</strong> 
+         </li>
+         
+         
+          <li id="alertMainVisibilityId" class="dropdown open dropdownsentiment" data-toggle="tooltip" data-placement="bottom" data-original-title="" aria-hidden="true">
+             <span class="dropdown">
+                    <span class=" dropdown-toggle" data-trigger="hover" id="alrtNotifction" data-placement="bottom" data-original-title="Notification" data-toggle="dropdown" onClick="getAlertDetails();">
+                       <span class="notification-txt" id="alrtNotifctionId">0 </span>
+                       <div class="sprite alert-icon"></div>
+                       <strong>Alert</strong> 
+                    </span>
+                    
+                    <span class="dropdown-menu  notification-dropdown dropdown-menu-arow" role="menu" aria-labelledby="menu1">
+                       <span class="notif-heading">
+                          <span>Notifications</span> 
+                          <span class="mark-all-col">
+                             <a href="#" onClick="updateAlertRead();">Mark All as Read</a> 
+                             <strong>
+                                    <span>Show</span>
+                                    <select onClick="selectStopPropgation()" onChange="notificationChange()" id="AlertByType">
+                                       <option value="unread">Unread</option>
+                                       <option value="read">Read</option>
+                                       <option value="">All</option>
+                                    </select>
+                             </strong>
+                          </span>
+                       </span>
+                       <ul id="alertPopupUl"></ul>
+                    </span>
+             </span>
+          </li>
+          
+          
+          <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Save Analytics" aria-hidden="true" onClick="saveSrchModl()" id="idSaveSearch">
+             <div class="sprite save-icon"></div>
+             <strong>Save</strong> 
+         </li>
+         
+         
+         <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Expot Analytics" aria-hidden="true" onClick="exportAll(this)" id="exportAllIdTw">
+             <div class="sprite export-icon"></div>
+             <strong>Export</strong> 
+          </li>
+          
+          
+          <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" 
+              data-original-title="Advanced Search" class="glyphicon glyphicon-filter iconmanage" 
+              aria-hidden="true" id="advinTwFilter">
+          </li>
+          
+          
+          <li style="display: none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" 
+              data-original-title="Crawlers" aria-hidden="true" id="divCrawlerId" onClick="clickCrawler()">
+             <div class="sprite crawlers-icon"></div>
+             <strong>Crawlers</strong> 
+          </li>
+          
+          
+          <li style="display:none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Profile Finder" 
+              aria-hidden="true">
+             <div class="sprite profile-finder-icon"></div>
+             <strong>Profile Finder</strong> 
+         </li> 
+         
+         
+         <li style="display:none;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" data-original-title="Collection" 
+              aria-hidden="true">
+             <div class="sprite collection-icon"></div>
+             <strong>Collection</strong> 
+          </li>
+
+
+         <li style="display:none;" id="profileFinderMainVisibilityId" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+             data-original-title="Profile Finder" aria-hidden="true" >
+              <a href="#">
+              <div class="sprite profile-finder-icon"></div>
+             <strong>Profile Finder</strong> 
+              </a>
+         </li>
+
+
+          <li id="collectionMainVisibilityId" data-trigger="hover" data-toggle="tooltip" data-placement="bottom" 
+              data-original-title="" aria-hidden="true">
+              <a href="#">
+             <div class="sprite collection-icon"></div>
+             <strong>Collection</strong> 
+             </a>
+          </li>
+          
+          
+          <li data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+             data-original-title="" aria-hidden="true" >
+              <a href="#">
+              <div class="sprite profile-finder-icon"></div>
+             <strong>Profile Finder</strong>            
+              </a>
+         </li>
+          
+          
+          <li>
+             <div class="sprite setting-icon"></div>
+             <strong>Setting</strong> 
+          </li>
+          <li>
+            <a href="javascript:void(0)"  (click)="signout()">
+               <span>
+              <div class="sprite user-icon"></div>
+              <strong>Durgesh</strong>
+                </span>
+             </a>
+          </li>
+       
+        </ul>           
+    </div>
+</header>

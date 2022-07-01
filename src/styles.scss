@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+// @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+@import "./assets/css/bootstrap.min.css";
+@import "./assets/css/login.css";
+@import "./assets/css/custom.css";
+@import "./assets/css/style.css";
+@import "./assets/css/overwrite.scss";
+
+
+body{font-family: 'Lato', sans-serif;}
+img{max-width:100%;}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

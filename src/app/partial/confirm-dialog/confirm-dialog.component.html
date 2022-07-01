@@ -1,0 +1,18 @@
+<div class="dialog_header" mat-dialog-title >
+<h4 class="mat-dialog-title">
+    {{title}}
+  </h4>
+  <span (click)="dismiss()" type="button" class="close"></span>
+</div>
+  
+  <div mat-dialog-content class="dialog_content">
+    <p class="mb-4">{{message}}</p>
+  </div>
+  
+  <div mat-dialog-actions class="dialog_footer">
+    <button mat-raised-button   cdkFocusInitial (click)="dismiss()" class="btn btn-default">No</button> &nbsp;
+    <button mat-raised-button   cdkFocusInitial color="primary" class="btn btn-primary" (click)="onClose()">Yes</button>
+   </div>
+
+   
+   

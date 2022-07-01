@@ -1,0 +1,25 @@
+* { margin: 0px; padding: 0px; }
+a { text-decoration: none; }
+img { border: none; }
+html { width: 100%; height: 100%; }
+.clear { clear: both; }
+body { font-family: 'Lato'; font-size: 12px; letter-spacing: 0.04em; text-rendering: optimizeSpeed; color: #000; width: 100%; height: 100%; }
+a { text-decoration: none !important; }
+.container-login-page { width: 100%; height: 100%; overflow: hidden; box-sizing: border-box; float: left; }
+.middle-login-page { width: 100%; height: 100%; box-sizing: border-box; overflow: hidden; position: relative; float: left; background: #232428; }
+.login_page .banner { width: 50%; height: 100%; overflow: hidden !important; float: left; }
+.login_page .login-logo { float: none; width: 100%; text-align: center; margin-bottom: 40px; }
+.login_page .login-logo img { max-width: 100%; float: none; overflow: hidden; width:auto; }
+.login_page .loginform { width: 300px; box-sizing: border-box; margin: 13%auto; overflow: hidden; }
+.login_page .loginform .form-group{margin-bottom:12px;}
+.login_page .loginform .textbox { width: 100%; height: 44px; margin-bottom:0; background: url('../images/user.png') no-repeat 12px #fff; border-radius: 5px;  border: #cecece 1px solid; padding: 0px 10px 0px 49px; box-sizing: border-box; }
+.login_page .loginform .textbox:focus { outline: none; box-shadow: #d8d5d5 0px 0px 7px; border: #cecece 1px solid; }
+.login_page .loginform .password { width: 100%; height: 44px; border-radius: 5px; background: url("../images/password.png") no-repeat 12px #fff; border: #cecece 1px solid; padding: 0px 10px 0px 49px; box-sizing: border-box; }
+.login_page .loginform .password:focus { outline: none; box-shadow: #d8d5d5 0px 0px 7px; border: #cecece 1px solid; }
+.login_page .loginform .phone-otp { width: 100%; height: 44px; border-radius: 5px; background: url("../images/icon/phone-otp.svg") no-repeat 12px #fff; border: #cecece 1px solid; padding: 0px 10px 0px 49px; box-sizing: border-box; margin-bottom: 12px; }
+.login_page .loginform .phone-otp { outline: none; box-shadow: #d8d5d5 0px 0px 7px; border: #cecece 1px solid; }
+.login_page .loginform .loginbtn { width: 100%; height: 48px; float: left; text-align: center; color: #fff; background: #3d55a4; font-size: 18px; cursor: pointer; text-transform: uppercase; border: none; font-weight: 700; border-radius: 5px; font-family: Corbel; }
+.login_page .error { color: red; margin-top: 0px; font-size: 13px; }
+.login_page .remember { float: left; margin: 10px 0px; }
+.login_page ul#demo1 li.sy-slide.fade.useCSS img { max-width: 100%; height: 100%; }
+.login_page .userLoimg { text-align: center; margin: 40px 0 15px 0; }
