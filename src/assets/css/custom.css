@@ -20,7 +20,7 @@ header.header-container .admin-column .top-search-box .search-col .search-input-
 header.header-container .admin-column .top-search-box .search-col .search-input-box span.search-icon { padding: 10px; background: #3d65b0; color: #fff; margin: 0; }
 header.header-container .admin-column .top-search-box .search-col span.search-icon { height: 42px; position: absolute; right: 0; width: 42px; }
 header.header-container .admin-column .top-search-box .newest-col { float: left; border: #cccccc 1px solid; border-radius: 2px; padding: 5px 10px; line-height: 20px; border-color: transparent; }
-header.header-container .admin-column .link-analysis ul li#casetoggle span.triangle-down { margin-top: 12px; }
+header.header-container .admin-column .link-analysis  span.triangle-down { margin-top: 12px; }
 header.header-container ul li span.triangle-down { width: 0; height: 0; border-left: 5px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #313030; float: right; margin: 5px 0 0 5px; }
 header.header-container .admin-column .top-search-box div#spntwsentfil { float: left; }
 header .header-right ul li a { text-decoration: none !important; }

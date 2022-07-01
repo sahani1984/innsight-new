@@ -2,7 +2,7 @@
 .custom_dialog{
     .mat-dialog-container{padding:0; border-radius:0;}
     .dialog_header{background: #051d6b; position:relative; font-size: 15px;font-weight: normal;padding: 12px;border-bottom: 0; overflow: hidden;
-        h4{font-weight: 400; font-size:1.5rem;text-shadow: none; color: #fff; text-transform: uppercase; margin: 0;line-height:1;}
+        h4{font-weight: 400; font-size:1rem;text-shadow: none; color: #fff; text-transform: uppercase; margin: 0;line-height:1;}
         .close{position:absolute;right: 0;top: 0;width: 45px;opacity: 1;text-shadow: none;border-radius: 0; color: #fff;text-align: center;z-index:5;height: 45px;margin: 0;
           &::after, &::before{position: absolute;content: ' ';height: 15px;width: 2px;background-color: #ffffff;opacity: 1;top: 12px;left: 21px;cursor: pointer;}
           &::after{transform: rotate(-45deg);}
@@ -10,10 +10,11 @@
           &:hover{background: #3d65b0;}
         }
     }
-    .dialog_content{padding:15px; font-size:1.3rem;}
+    .dialog_content{padding:15px; font-size:.9rem;}
     .dialog_footer{padding:10px 15px; border-top:1px solid #ddd; display:flex; justify-content:flex-end;}  
     .btn{padding:5px 20px; border-radius:2px; border:none}
     .btn-primary{background-color:#003366;}
+    .btn-default{background-color:#dad9d9;}
 }
 
 
