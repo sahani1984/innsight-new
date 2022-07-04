@@ -2247,7 +2247,7 @@ img#preloaderIdForSlideDocRpt { width: 21px; height: 21px; margin: 5px }
 .add-analysis-source .panel-title > a { display: block; text-decoration: none!important; cursor: auto; background: #eaeaea; font-weight: normal; margin-bottom: 0; font-family: 'RobotoMedium'; color: #333; font-size: 13px; }
 .add-analysis-source .panel-default > .panel-heading + .panel-collapse > .panel-body { border-top-color: #EEE; padding: 0 }
 .add-analysis-source-list { width: 100%; float: left }
-.add-analysis-source-list ul { list-style: none; float: left; width: 100%; max-height: 100px; overflow: auto }
+.add-analysis-source-list ul { list-style: none; float: left; width: 100%; max-height: 100px; overflow-y: auto; overflow-x:hidden; }
 .add-analysis-source-list ul li { width: 33%; float: left; margin-bottom: 5px }
 .add-analysis-source-list ul li span { color: #424242!important; font-size: 13px; font-family: Century Gothic; text-transform: capitalize; font-weight: 500; font-size: 12px!important }
 #ClNewAnalysis .modal-body .col-sm-12 .col-sm-8 { padding: 0; line-height: 21px }
@@ -2662,7 +2662,8 @@ span.allcountryserach input[type=text] { float: left; border-radius: 0; margin-t
 .table-prfile .table>tbody>tr>td:last-child { width: 5%; font-size: 17px; color: #b7b7b7; cursor: pointer }
 .col-left-fitter { position: absolute; left: 0; width: 100%; height: 94%; overflow: hidden; border-right: 1px #d6d2d2 solid; overflow-y: auto; }
 .left-menu-fillter .Search-new-analysis-col #headingTwo { background: #051d6b; border-radius: 0; padding: 12px }
-.left-menu-fillter .Search-new-analysis-col #headingTwo h4.panel-title { color: #fff; font-size: 14px }
+.left-menu-fillter .Search-new-analysis-col #headingTwo h4.panel-title { color: #fff; font-size: 14px; margin:0; }
+.left-menu-fillter .Search-new-analysis-col #headingTwo h4.panel-title a{color:#fff;}
 span.allcountryserach { width: 80% }
 .middle-width100pr { width: 100% !important; }
 .middle-width70pr { width: 75% !important; overflow-y: hidden; overflow-x: auto; height: 95%; }

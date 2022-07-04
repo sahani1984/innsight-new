@@ -1,0 +1,644 @@
+<div id="ClNewAnalysis" class="left-menu-fillter topoheight25pr">
+    <div class="Search-new-analysis-col">
+       <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title"> <a class="collapsed"> Advance Filter </a> 
+          <span> <a data-attrtype="apply" onClick="advanceFilterOper(this)" class="collapsed"> Apply</a> 
+          <a data-attrtype="close" (click)="closepanel()" class="collapsed"> Close</a> 
+          </span> 
+          </h4>
+       </div>
+       <div class="col-left-fitter">
+          <div class="add-analysis-source">
+             <div class="panel panel-default" style="border-bottom:0; margin-bottom:0;">
+                <div>
+                
+                   <!-- Sentiment Filter Start -->
+                   <div class="panel-body">
+                      <div class="col-sm-12 row-col panel-title-sentiment"> <span>Sentiment</span> </div>
+                      <div class="col-sm-12 row-col">
+                         <div class="add-analysis-source-list">
+                            <ul id="sentiList">
+                              <li *ngFor="let item of sentimentLists;">
+                                 <label class="checkbox-custom">{{item.title}}
+                                 <input  type="checkbox" [value]="item.value" [checked]="item.checked"/>
+                                 <span class="checkmark"></span> </label>
+                              </li>                              
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   <!-- Sentiment Filter End --> 
+                   
+                   <!-- Classification Filter Start -->
+                   <div class="panel-body">
+                      <div class="col-sm-12 row-col panel-title-sentiment"> <span>Classification</span> </div>
+                      <div class="col-sm-12 row-col">
+                         <div class="add-analysis-source-list">
+                            <ul id="classificationList">
+                               <li *ngFor="let item of classificationLists;">
+                                  <label class="checkbox-custom">{{item.title}}
+                                  <input  type="checkbox" [value]="item.value" [checked]="item.checked" />
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   
+                   
+                    <!-- Threat Classification Filter Start -->
+                    <!-- checked="checked" -->
+                   <div class="panel-body">
+                      <div class="col-sm-12 row-col panel-title-sentiment"> 
+                      <span> Threat Classification</span> 
+                      </div>
+                      <div class="col-sm-12 row-col">
+                         <div class="add-analysis-source-list">
+                            <ul id="threatClassificationList">
+                               <li *ngFor="let item of threatClassification;">
+                                  <label class="checkbox-custom">{{item.title}}
+                                  <input type="checkbox" [value]="item.value" [checked]="item.checked" >
+                                  <span class="checkmark"></span> </label>
+                               </li>                               
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+
+
+                   <!-- Emotion Filter Start -->
+                   <div style="display: none;" class="panel-body">
+                      <div class="col-sm-12 row-col"> <span>Emotion</span> </div>
+                      <div class="col-sm-12 row-col">
+                         <div class="add-analysis-source-list">
+                            <ul id="emotionalList">
+                               <li>
+                                  <label class="checkbox-custom">Neutral
+                                  <input value="NEUTRAL" checked="checked" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                               <li>
+                                  <label class="checkbox-custom">Happiness
+                                  <input value="HAPPINESS" checked="checked" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                               <li>
+                                  <label class="checkbox-custom">Sadness
+                                  <input value="SADNESS" checked="checked" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                               <li>
+                                  <label class="checkbox-custom">Fear
+                                  <input value="FEAR" checked="checked" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                               <li>
+                                  <label class="checkbox-custom">Anger
+                                  <input value="ANGER" checked="checked" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                               <li>
+                                  <label class="checkbox-custom">Disgust
+                                  <input value="DISGUST" checked="checked" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                               <li>
+                                  <label class="checkbox-custom">Surprise
+                                  <input value="SURPRISE" checked="checked" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                   <!-- Emotion Filter End --> 
+                </div>
+             </div>
+             
+             
+             
+             <!-- Threat Matrix Start -->
+             <div style="display: none;" class="panel-group">
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                      <h4 class="panel-title"> <span> Threat Matrix </span> </h4>
+                   </div>
+                   <div class="panel-body">
+                      <div class="col-sm-12 row-col">
+                         <div class="add-analysis-source-list">
+                            <ul id="ulThreatMatrixId">
+                               <li>
+                                  <label class="checkbox-custom">High
+                                  <input name="highThreatMatrix" id="highThreatMatrixId" value="high" type="checkbox">
+                                  <span class="checkmark"></span> </label>
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             
+             <!-- Twitter Verified Start -->
+             <div class="panel-group">
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                      <h4 class="panel-title"> <span> Verified User </span> </h4>
+                   </div>
+                   <div class="panel-body">
+                      <div class="col-sm-12 row-col">
+                         <div class="add-analysis-source-list">
+                            <ul id="ulVerifiedUserId">
+                               <li *ngFor="let item of verifiedUser;">
+                                  <label class="radio-custom">{{item.title}}
+                                  <input type="radio" name="twUserType" [value]="item.value" [checked]="item.checked">
+                                  <span class="radiobtn"></span> </label>
+                               </li>                              
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+
+             
+             <!-- Date Filter Start -->
+             <div class="panel-group">
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                      <h4 class="panel-title"> <span> Date </span> </h4>
+                   </div>
+                   <div class="panel-body">
+                      <div class="col-sm-12 row-col">
+                         <div class="add-analysis-source-list">
+                            <ul id="ulDateFilterId">
+                               <li>
+                                  <label class="radio-custom">Published
+                                  <input type="radio" name="dateType" id="publishedDate" value="publishedDate" type="radio" checked>
+                                  <span class="radiobtn"></span> </label>
+                               </li>
+                               <li>
+                                  <label class="radio-custom">Collection
+                                  <input type="radio" name="dateType" id="insertDate" value="insertDate" type="radio">
+                                  <span class="radiobtn"></span> </label>
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+             
+             <!-- style="display: none;" -->
+             <!-- FEDERATED -->
+             <div style="display: none;" class="panel-group">
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                   <h4 class="panel-title"> <span> FEDERATED </span> </h4>
+                   </div> 
+                </div>
+                
+                <div class="col-sm-12 row-col" id="newsfeedFederatedDiv">
+                  <input type="text" class="form-control" id="txtFederatedKeywords">                                 
+                </div>
+             </div>
+             
+             
+             <!-- FTP -->
+             <div class="panel-group">
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                   <h4 class="panel-title"> <span> FTP </span> </h4>
+                   </div> 
+                </div>
+                
+                <div class="col-sm-12 row-col">
+                <span class="ok pull-right newsfeedsearch"> Search </span>
+                   <table class="table table-bordered tblNewsWebsiteAnalysis" id="tblFTPAnalysis" style="display: none;">
+                      <thead>  
+                         <tr>
+                            <th style="width:15%">Sr.No</th>
+                            <th style="width:80%">Ftp</th>
+                            <th style="width:5%"> 
+                            <i class="fa fa-trash" data-trigger="hover" data-toggle="tooltip" data-placement="left" data-original-title="Delete" onclick="clearAllFTP()"></i> 
+                            </th>
+                         </tr>
+                      </thead>
+                      <tbody> </tbody>
+                   </table>
+                </div>
+             </div>
+             
+             
+             <!-- Website -->
+             <div  class="panel-group">
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                      <h4 class="panel-title"> <span> Website </span> </h4>
+                   </div>
+                </div>
+
+                <div class="col-sm-12 row-col" id="newsfeedWebsiteDiv">
+                   <span class="ok pull-right newsfeedsearch" onclick="openNewsWebsiteModal();"> Search </span>
+                   <table class="table table-bordered tblNewsWebsiteAnalysis" id="tblNewsWebsiteAnalysis" style="display: none;">
+                      <thead>  
+                         <tr>
+                            <th style="width:15%">Sr.No</th>
+                            <th style="width:80%">Website</th>
+                            <th style="width:5%"> 
+                            <i class="fa fa-trash" data-trigger="hover" data-toggle="tooltip" data-placement="left" data-original-title="Delete" onclick="clearAllNewWebsite()"></i> 
+                            </th>
+                         </tr>
+                      </thead>
+                      <tbody> </tbody>
+                   </table>
+                </div>
+             </div>
+             
+             
+             <!-- News Feed Start -->
+             <div class="panel-body">
+                <div class="col-sm-12 row-col newsfeed-heading">
+                   <div class="newsfeed-col">
+                   <span>Country Desk</span>                   
+                   </div>
+
+                   <span class="radio-btnnewsfeed">   
+                   <ng-container *ngFor="let cd of countryDeskList">
+                     <label class="radio-custom">{{cd.title}}
+                        <input type="radio" (change)="this.countryDesk = cd.value" name="newsfeedcountry" [checked]="cd.checked" [value]="cd.value">
+                        <span class="radiobtn"></span> 
+                        </label>
+                   </ng-container>               
+                </span> 
+                </div>
+                
+                
+                
+                <!-- News Country  -->
+               <div *ngIf="this.countryDesk == 'country'">
+                  <div class="add-analysis-source-list">
+                     <div class="col-sm-12 row-col">
+                        <input hidden id="country" type="checkbox" #country checked  (change)="checkUncheckAll($event, this.countryLists)" >
+                        <label for="country" class="ok align-right" >{{country.checked?'Uncheck All':'Check All'}} </label>
+                     </div>
+                     <div class="col-sm-12 row-col">
+                        <ul id="anslyisRssList">
+                           <li *ngFor="let c of countryLists;">
+                              <label class="checkbox-custom">{{c.title}}
+                                 <input type="checkbox" [value]="c.value" name="rsscountrymap" [checked]="c.checked">
+                                 <span class="checkmark"></span> </label>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+                
+                <!-- News Paper  -->
+               <div *ngIf="countryDesk == 'newspaper'" class="col-sm-12 row-col" id="newsfeedSourceDiv">
+                  <span class="ok pull-right newsfeedsearch"> Search </span>
+                  <table class="table table-bordered tblNewsSourceAnalysis" id="tblNewsSourceAnalysis">
+                     <thead>
+                        <tr>
+                           <th style="width:20%">Sr.No</th>
+                           <th style="width:75%">News Source</th>
+                           <th style="width:5%">
+                              <i class="fa fa-trash" data-trigger="hover" data-toggle="tooltip" data-placement="left"
+                                 data-original-title="Delete" onclick="clearAllNewSource()"></i>
+                           </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                     </tbody>
+                  </table>
+               </div>
+               </div>
+
+
+
+             <!-- Social Media Sources Start -->
+             <div class="panel-group">
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                   <h4 class="panel-title"> <span> Social Media Sources </span> </h4>
+                   </div>
+                   <div>
+                      <div class="panel-body">
+                         <div class="col-sm-12 row-col">
+                            <input  type="checkbox" hidden  (change)="checkUncheckAll($event, this.socialmedia)" checked #source id="lblCheckUnCheckAll">
+                            <label for="lblCheckUnCheckAll" class="ok align-right">{{source.checked? "Uncheck All":"Check All"}} </label> 
+                         </div>
+                         <div class="col-sm-12 row-col">
+                            <div class="add-analysis-source-list">
+                               <ul id="ulEntifilSource">
+                                 <li *ngFor="let s of socialmedia;">
+                                    <label class="checkbox-custom">{{s.title}}
+                                    <input type="checkbox"  name="sourceAnal" [value]="s.value" [checked]="s.checked">
+                                    <span class="checkmark"></span> </label>
+                                 </li>                                 
+                               </ul>
+                            </div>
+                         </div>
+                      </div>
+                      
+                      <!-- Social Media Sources End -->
+                      <div class="panel-body" style="display:none">
+                         <div class="col-sm-12 row-col">
+                            <input checked id="chkCustCrawlr" type="checkbox">
+                            <span>Custom Crawler</span> 
+                         </div>
+                      </div>
+                      <!-- Dark Web -->
+                      <div style="display: none" class="panel-body">
+                         <div class="panel-heading">
+                            <h4 class="panel-title"> <span>Dark Web </span> </h4>
+                         </div>
+                         <div class="col-sm-12 row-col">
+                            <input style="display: none;" id="chkboxCheckUnCheckAllDarkweb" 
+                               onclick="selectAllDarkwebSourceFromAnalysis(this);" type="checkbox">
+                            <span id="checkUnCheckAllDarkweb" class="ok align-right" data-attr="0"
+                               onclick="checkUncheckAllSourceDarkweb(this);">Uncheck All </span> 
+                         </div>
+                         <div class="col-sm-12 row-col">
+                            <div class="add-analysis-source-list">
+                               <ul id="ulEntityDarkweb">
+                                  <li>
+                                     <label class="checkbox-custom">Financial
+                                     <input checked="" name="sourceDarkweb1" value="financial" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Drugs
+                                     <input checked="" name="sourceDarkweb1" value="drugs" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Commercial
+                                     <input checked="" name="sourceDarkweb1" value="commercial" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Hosting
+                                     <input checked="" name="sourceDarkweb1" value="hosting" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Forums
+                                     <input checked="" name="sourceDarkweb1" value="forums" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Messaging
+                                     <input checked="" name="sourceDarkweb1" value="messaging" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Political
+                                     <input checked="" name="sourceDarkweb1" value="political" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Hacking
+                                     <input checked="" name="sourceDarkweb1" value="hacking" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Warez
+                                     <input checked="" name="sourceDarkweb1" value="warez" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                                  <li>
+                                     <label class="checkbox-custom">Non-English
+                                     <input checked="" name="sourceDarkweb1" value="nonEnglish" type="checkbox">
+                                     <span class="checkmark"></span> </label>
+                                  </li>
+                               </ul>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <!-- Bool operation -->
+                <div style="display: none" class="profileBool">
+                   <input value="and" name="profileBool" type="radio"/>
+                   <span>AND </span>
+                   <input value="or" checked name="profileBool" type="radio"/>
+                   <span>OR </span> 
+                </div>
+                <div class="panel panel-default" style="display:none">
+                   <div class="panel-heading" role="tab" id="headingfour">
+                      <h4 class="panel-title"> <a href="#">Profile <span class="ok" onclick="openAnalysisSearchProfileFromSystem();"> Search </span> </a> </h4>
+                   </div>
+                   <div>
+                      <table class="table table-bordered table-prfile">
+                         <tbody>
+                            <tr>
+                               <td style="width:5%">1</td>
+                               <td style="width:15%"><img src="image/m.png" class="img-responsive" style="width:10px"></td>
+                               <td style="width:70%">test</td>
+                               <td style="width:5%;  font-size: 17px; color: #b7b7b7; cursor: pointer;"><i class="fa fa-trash"></i></td>
+                            </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+                <div class="panel panel-default" style="display:none">
+                   <div class="panel-heading" role="tab" id="headingfour">
+                      <h4 class="panel-title"> <a href="#">Organization <span class="ok" onclick="openAnalysisSearchProfileFromSystem();"> Search </span> </a> </h4>
+                   </div>
+                   <div>
+                      <table class="table table-bordered table-prfile">
+                         <tbody>
+                            <tr>
+                               <td style="width:5%">1</td>
+                               <td style="width:15%"><img src="image/m.png" class="img-responsive" style="width:10px"></td>
+                               <td style="width:70%">test</td>
+                               <td style="width:5%;  font-size: 17px; color: #b7b7b7; cursor: pointer;"><i class="fa fa-trash"></i></td>
+                            </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+                <div class="panel panel-default" style="display:none">
+                   <div class="panel-heading" role="tab" id="headingfour">
+                      <h4 class="panel-title"> <a href="#">Location <span class="ok" onclick="openAnalysisSearchProfileFromSystem();"> Search </span> </a> </h4>
+                   </div>
+                   <div>
+                      <table class="table table-bordered table-prfile">
+                         <tbody>
+                            <tr>
+                               <td style="width:5%">1</td>
+                               <td style="width:15%"><img src="image/m.png" class="img-responsive" style="width:10px"></td>
+                               <td style="width:70%">test</td>
+                               <td style="width:5%;  font-size: 17px; color: #b7b7b7; cursor: pointer;"><i class="fa fa-trash"></i></td>
+                            </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+                
+                
+                <!-- GEO Start -->
+                <div class="panel-body" style="display:none;">
+                   <div class="col-sm-12 row-col newsfeed-heading">
+                      <div class="newsfeed-col"> <span>GEO</span> </div>
+                      <span class="radio-btnnewsfeed">
+                      <label class="radio-custom">Track Keyword
+                      <input checked value="country" onChange="newsFeedOption1();" type="radio" id="newsFeedCountrys1" name="newsfeedcountry1">
+                      <span class="radiobtn"></span> </label>
+                      <label class="radio-custom">Track Location
+                      <input value="source" onChange="newsFeedOption1();" type="radio" id="newsFeedSources1" name="newsfeedcountry1">
+                      <span class="radiobtn"></span> </label>
+                      </span> 
+                   </div>
+                   <div class="col-sm-12 row-col" id="newsfeedSourceDiv1" style="display: none">
+                      <span class="ok pull-right newsfeedsearch" onclick="openNewsSourceModal();"> Search </span> 
+                      <!-- <span class="ok pull-right newsfeedsearch" onclick="openNewsPaperSourceModal();"> Search1 </span> -->
+                      <table class="table table-bordered" id="tblNewsSourceAnalysis1" style="display: none">
+                         <thead>
+                            <tr>
+                               <th style="width:15%">Sr.No</th>
+                               <th style="width:80%">News Source</th>
+                               <th style="width:5%"> <i class="fa fa-trash" data-trigger="hover" data-toggle="tooltip" data-placement="left" 
+                                  data-original-title="Delete" onclick="clearAllNewSource()"> </i> </th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+                <!-- GEO End -->
+                
+                <div class="panel panel-default">
+                   <div class="panel-heading" role="tab" id="headingfour">
+                      <h4 class="panel-title"> <a onClick="toggleTabImg(this)" data-attr="0" role="button"> Social Media Handler <span style="display:none" class="ok" onClick="openAnalysisSearchProfile();"> <strong>Web</strong> </span> <span style="display:none"><strong>|</strong></span> <span class="ok" onClick="openAnalysisSearchProfileFromSystem();"> Search </span> </a> </h4>
+                   </div>
+                   <div role="tabpanel" aria-labelledby="headingfour">
+                      <div class="panel-body">
+                         <div class="contentbox">
+                            <div class="clear"></div>
+                            <div class="socialdsboard">
+                               <!-- Twitter --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileTwitterAna" data-toggle="tooltip" title="Twitter" data-original-title="Twitter"> <img src="./assets/images/t2.png"> <span id="twencnt" class="point">0</span> </span> 
+                               <!-- Facebook --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileFbAna" data-toggle="tooltip" title="Facebook" data-original-title="Facebook"> <img src="./assets/images/f1.png"> <span id="fbencnt" class="point">0</span> </span> 
+                               <!-- Youtube --> 
+                               <span class="icontab1" data-attrselect="0"
+                                  onclick="socialEventTab(this)" id="spnProfileYtAna"
+                                  data-toggle="tooltip" title="Youtube" data-original-title="Youtube"> <img src="./assets/images/yt.png"> <span id="ytencnt" class="point">0</span> </span> 
+                               <!-- Instagram --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileInstaAna" data-toggle="tooltip" title="Instagram" data-original-title="Instagram"> <img src="./assets/images/inst1.png"> <span id="insencnt" class="point">0</span> </span> 
+                               <!-- Dailymotion --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)"
+                                  id="spnProfileDmAna" data-toggle="tooltip" title="Dailymotion" data-original-title="Dailymotion"> <img src="./assets/images/dailymotion_25.png"> <span id="dmencnt" class="point">0</span> </span> 
+                               <!-- Tumblr --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)"
+                                  id="spnProfileTmAna" data-toggle="tooltip" title="Tumblr" data-original-title="Tumblr"> <img src="./assets/images/tumbler_25.png"> <span id="tmencnt" class="point">0</span> </span> 
+                               <!-- Telegram --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileTgAna" data-toggle="tooltip" title="Telegram" data-original-title="Telegram"> <img src="./assets/images/icon/telegramTrackProfileIcon.svg" width="25px" height="auto"> <span id="tgencnt" class="point">0</span> </span> 
+                               <!-- Blogger --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileGbAna" data-toggle="tooltip" title="Blogger" data-original-title="Blogger"> <img src="./assets/images/bloger_25.png"> <span id="gbencnt" class="point">0</span> </span> 
+                               <!-- Linkedin --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileLinkedinAna" data-toggle="tooltip" title="Linkedin" data-original-title="Linkedin"> <img src="./assets/images/linkedinIcon.png" width="25px" height="25px"> <span id="linkedinencnt" class="point">0</span> </span> 
+                               <!-- Reddit --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileRedditAna" data-toggle="tooltip" title="Reddit" data-original-title="Reddit"> <img src="./assets/images/icon/reddit-icon-svg.svg" width="25px" height="25px"> <span id="redditencnt" class="point">0</span> </span> 
+                               <!-- Flickr --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileFlickrAna" data-toggle="tooltip" title="Flickr" data-original-title="Flickr"> <img src="./assets/images/icon/flickr-icon-svg.svg" width="25px" height="25px"> <span id="flickrencnt" class="point">0</span> </span> 
+                               <!-- VK --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileVKAna" data-toggle="tooltip" title="VK" data-original-title="VK"> <img src="./assets/images/icon/vk-icon.svg" width="25px" height="25px"> <span id="vkencnt" class="point">0</span> </span> 
+                               
+                               <!-- Weibo --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileWeiboAna" data-toggle="tooltip" title="Weibo" data-original-title="Weibo"> <img src="./assets/images/icon/weibo-icon-svg.svg" width="25px" height="25px"> <span id="weiboencnt" class="point">0</span> </span> 
+                               <!-- Tiktok --> 
+                               <span class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileTiktokAna" data-toggle="tooltip" title="Tiktok" data-original-title="Tiktok"> <img src="./assets/images/icon/tiktok-icon.svg" width="25px" height="25px"> <span id="tiktokencnt" class="point">0</span> </span> 
+                               
+                               
+                               
+                               <!-- Website --> 
+                               <span style="display: none" class="icontab1" data-attrselect="0" onclick="socialEventTab(this)" 
+                                  id="spnProfileWebAna" data-toggle="tooltip" title="Website" data-original-title="Website"> <img src="./assets/images/web1.png"> <span id="webencnt" class="point">0</span> </span> 
+                               <!-- Google+ --> <!-- Google+ --> 
+                               <span style="display: none" class="icontab1" data-attrselect="0" onclick="socialEventTab(this)"
+                                  id="spnProfileGpAna" data-toggle="tooltip" title="Google+" data-original-title="Google+"> <img src="./assets/images/googleplus_25.png"> <span id="gpencnt" class="point">0</span> </span> 
+                               <!-- China media -->
+                               <div style="display: none;"> <span data-attrselect="0" onClick="socialEventTab(this)" id="spnProfileWeiboAna" data-toggle="tooltip" title="Weibo" class="icontab1"> <img src="${pageContext.request.contextPath}/image/weibo-icon-r.png"> <span id="weiboencnt" class="point">0</span> </span> <span style="padding-left:6px;" data-attrselect="0" onClick="socialEventTab(this)" id="spnProfileRenrenAna" data-toggle="tooltip" title="Renren" class="icontab1"> <img src="${pageContext.request.contextPath}/image/renren-r-icon.png"> <span id="renrenencnt" class="point">0</span> </span> <span style="padding-left:7px; padding-left: 6px;" data-attrselect="0" onClick="socialEventTab(this)" id="spnProfileDoubanAna" data-toggle="tooltip" title="Douban" class="icontab1"> <img src="${pageContext.request.contextPath}/image/douban-r-icon.png"> <span id="doubanencnt" class="point">0</span> </span> <span style="padding-left:6px;" data-attrselect="0" onClick="socialEventTab(this)" id="spnProfileDiandianAna" data-toggle="tooltip" title="Diandian" class="icontab1"> <img src="${pageContext.request.contextPath}/image/Diandian-r-icon.png"> <span id="diandianencnt" class="point">0</span> </span> <span style=" margin: 0; padding-left: 8px;" data-attrselect="0" onClick="socialEventTab(this)" id="spnProfileYoukuAna" data-toggle="tooltip" title="Youku" class="icontab1"> <img src="${pageContext.request.contextPath}/image/youku-r-icon.png"> <span id="youkuencnt" class="point">0</span> </span> </div>
+                            </div>
+                            <div class="clear"></div>
+                           
+                            <div class="rowbox" id="addNewAnalysisPanel">
+                               <div class="twitterbox"></div>
+                               <div class="fbbox"></div>
+                               <div class="youtubebox"></div>
+                               <div class="instangrambox"></div>
+                               <div class="dmbox"></div>
+                               <div class="tmbox"></div>
+                               <div class="tgbox"></div>
+                               <div class="gbbox"></div>
+                               <div class="linkedinbox"></div>
+                               <div class="redditbox"></div>
+                               <div class="flickrbox"></div>
+                               <div class="weibobox"></div>
+                               <div class="tiktokbox"></div>
+                               <div class="vkbox"></div>
+                               <div class="webbox"></div>
+                               <div class="renrenbox"></div>
+                               <div class="doubanbox"></div>
+                               <div class="diandianbox"></div>
+                               <div class="youkubox"></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <!--Geo Location -->
+                <div class="panel panel-default">
+                   <div class="panel-heading" role="tab" id="headingfive">
+                      <h4 class="panel-title"> <a href="#">Geo Location</a> <span onClick="openFindLocationView()" id="geoLocationFindId" data-attrGeoLocation="">Find Location</span> <span onClick="openClearLocationView()" id="geoLocationClearId" class="geoLocationClearCl" style="display: none;">Clear Location</span> </h4>
+                   </div>
+                   <div class="panel-collapse" id="geoLocationDetailsId" style="display: none;">
+                      <div class="table-row">
+                         <div class="geo-loc-col"> <strong class="col-sm-5">Location Name : </strong> <span class="col-sm-5" id="geoLocationNameId"> </span> </div>
+                         <div class="geo-loc-col"> <strong class="col-sm-5">Latitude : </strong> <span class="col-sm-5" id="geoLatitudeId"> </span> </div>
+                         <div class="geo-loc-col"> <strong class="col-sm-5">Longitude : </strong> <span class="col-sm-5" id="geoLongitudeId"> </span> </div>
+                         <div class="geo-loc-col"> <strong class="col-sm-5">Radius : </strong> <span class="col-sm-5" id="geoRadiusId"> </span> </div>
+                      </div>
+                   </div>
+                </div>
+                <!-- Whatsapp analysis -->
+                <div class="panel panel-default">
+                   <div class="panel-heading" role="tab" id="headingfour">
+                      <h4 class="panel-title"> <a> Messaging App <span class="ok" onClick="openSearchWhatsAppNumber_Group();"> Search </span> </a> </h4>
+                   </div>
+                   <div role="tabpanel">
+                      <div class="panel-body">
+                         <div class="contentbox">
+                            <div class="clear"></div>
+                            <div class="socialdsboard"> <span class="icontab1" data-attrselect="0"
+                               onclick="socialEventTab(this)" id="spnProfileWhatsAna"
+                               data-toggle="tooltip" title="" data-original-title="Whatsapp"> <img src="./assets/images/whapp-icon.svg"> <span id="whatsappencnt" class="point">0</span> </span> </div>
+                            <div class="clear"></div>
+                            <div class="rowbox" id="whatsappAnalysisPanel">
+                               <div class="whatsappbox"></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

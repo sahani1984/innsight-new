@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { CommunicationService } from 'src/app/services/communication.service';
 import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
@@ -9,8 +10,11 @@ import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/co
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private dialog:MatDialog, private router:Router) { }
+  
+  constructor(
+    private dialog:MatDialog,
+    private cServices:CommunicationService, 
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +30,10 @@ export class HeaderComponent implements OnInit {
    dialogRef.afterClosed().subscribe(res=>{
     if(res) this.router.navigate(['/']);   
    })
+  }
 
+  showPanel(){    
+    this.cServices.advancefilterpanel.next(true)
   }
 
 
